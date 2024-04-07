@@ -1,0 +1,45 @@
+{
+    "version": "v0",
+    "nodes": [
+        {
+            "id": 0,
+            "type": "VideoCaptureNode",
+            "name": "VideoCaptureNode",
+            "runner": "default",
+            "props": {
+                "video_path": "/dataset/wjx/cvdataset/gddi/pose_demo_1.mp4"
+            }
+        },
+        {
+            "id": 1,
+            "type": "Detection_v2",
+            "name": "Detection_v2",
+            "runner": "default",
+            "props": {
+                "mod_name": "det_person",
+                "conf_path": "models/person.json",
+                "mod_path": "/dataset/wjx/share/model.gem"
+            }
+        },
+        {
+            "id": 2,
+            "type": "Pose_Estimation",
+            "name": "Pose_Estimation",
+            "runner": "default",
+            "props": {
+                "config_file": "./src/modules/pose/config.yaml",
+                "log_mode": "debug",
+                "image_path": "./src/modules/pose/00001.jpg"
+            }
+        }
+    ],
+    "pipe": [
+        [
+            0,
+            0,
+            1,
+            0
+        ],
+        [1,0,2,0]
+    ]
+}

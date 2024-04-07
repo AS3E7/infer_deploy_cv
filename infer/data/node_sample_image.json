@@ -1,0 +1,64 @@
+{
+  "version": "v0",
+  "nodes": [
+    {
+      "id": 0,
+      "type": "Image_v2",
+      "name": "Image_v2",
+      "runner": "default",
+      "props": {
+        "task_id": "111",
+        "image_url": "http://192.168.1.115:9080/data/samplevideo/ee9fcd90535271ab30ddc45a07837de5.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySUQiOiJhZG1pbiIsImV4cCI6MTYzOTQ0ODk5MX0.nQtJrbP0AHsHuhyq-2F7vi-a1IwmRDNrbj0AT68eIxs"
+      }
+    },
+    {
+      "id": 1,
+      "type": "Detection_v2",
+      "name": "Detection_v2",
+      "runner": "default",
+      "props": {
+        "mod_name": "det_person",
+        "conf_path": "/workspace/ffmpeg-wrapper/models/person.json",
+        "mod_path": "/workspace/ffmpeg-wrapper/models/person.gem"
+      }
+    },
+    {
+      "id": 2,
+      "type": "Graphics_v2",
+      "name": "Graphics_v2",
+      "runner": "default",
+      "props": {
+        "ttf_file": "/workspace/ffmpeg-wrapper/resources/ttf/NotoSans-Regular.ttf"
+      }
+    },
+    {
+      "id": 3,
+      "type": "Debug_v2",
+      "name": "Debug_v2",
+      "runner": "default",
+      "props": {
+        "save_path": "/workspace/ffmpeg-wrapper/debug"
+      }
+    }
+  ],
+  "pipe": [
+    [
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      1,
+      0,
+      2,
+      0
+    ],
+    [
+      2,
+      0,
+      3,
+      0
+    ]
+  ]
+}

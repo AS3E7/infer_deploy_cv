@@ -1,0 +1,108 @@
+{
+  "version": "v0",
+  "nodes": [
+    {
+      "id": 0,
+      "type": "Demuxer_v2",
+      "name": "Demuxer_v2",
+      "runner": "default",
+      "props": {
+        "stream_url": "http://192.168.1.115:9080/data/samplevideo/1111.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySUQiOiJhZG1pbiIsImV4cCI6MTYzOTY0MTMyM30.vWZGG3SDaKuYkYY-aiYNyLS_BQU9bztz4SuHZ_Iz-K8"
+      }
+    },
+    {
+      "id": 1,
+      "type": "Decoder_v2",
+      "name": "Decoder_v2",
+      "runner": "default",
+      "props": {
+        "hw_type": 2
+      }
+    },
+    {
+      "id": 2,
+      "type": "AvToCv_v2",
+      "name": "AvToCv_v2",
+      "runner": "default"
+    },
+    {
+      "id": 3,
+      "type": "Detection_v2",
+      "name": "Detection_v2",
+      "runner": "default",
+      "props": {
+        "mod_name": "det_person",
+        "conf_path": "/workspace/ffmpeg-wrapper/models/person.json",
+        "mod_path": "/workspace/ffmpeg-wrapper/models/person.gem"
+      }
+    },
+    {
+      "id": 4,
+      "type": "Tracking_v2",
+      "name": "Tracking_v2",
+      "runner": "default"
+    },
+    {
+      "id": 5,
+      "type": "Graphics_v2",
+      "name": "Graphics_v2",
+      "runner": "default",
+      "props": {
+        "ttf_file": "/workspace/ffmpeg-wrapper/resources/ttf/NotoSans-Regular.ttf"
+      }
+    },
+    {
+      "id": 6,
+      "type": "Debug_v2",
+      "name": "Debug_v2",
+      "runner": "default",
+      "props": {
+        "save_path": "/workspace/ffmpeg-wrapper/debug"
+      }
+    }
+  ],
+  "pipe": [
+    [
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      2,
+      0
+    ],
+    [
+      2,
+      0,
+      3,
+      0
+    ],
+    [
+      3,
+      0,
+      4,
+      0
+    ],
+    [
+      4,
+      0,
+      5,
+      0
+    ],
+    [
+      5,
+      0,
+      6,
+      0
+    ]
+  ]
+}

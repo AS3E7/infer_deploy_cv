@@ -1,0 +1,92 @@
+{
+  "version": "v0",
+  "nodes": [
+    {
+      "id": 0,
+      "type": "Demuxer_v2",
+      "name": "Demuxer_v2",
+      "runner": "default",
+      "props": {
+        "stream_url": "rtsp://admin:gddi1234@192.168.1.231:554/h264/ch1/main/av_stream"
+      }
+    },
+    {
+      "id": 1,
+      "type": "Decoder_v2",
+      "name": "Decoder_v2",
+      "runner": "default"
+    },
+    {
+      "id": 2,
+      "type": "AvToCv_v2",
+      "name": "AvToCv_v2",
+      "runner": "default"
+    },
+    {
+      "id": 3,
+      "type": "Detection_v2",
+      "name": "Detection_v2",
+      "runner": "Detection",
+      "props": {
+        "mod_path": "/home/models/person.gem",
+        "min_detect": 0,
+        "max_detect": 4915200,
+        "hot_region": [ 0, 0, 2560, 1440 ],
+        "filter_labels": [ "person" ]
+      }
+    },
+    {
+      "id": 4,
+      "type": "Tracking_v2",
+      "name": "Tracking_v2",
+      "runner": "default"
+    },
+    {
+        "id": 5,
+        "type": "Graphics_v2",
+        "name": "Graphics_v2",
+        "runner": "Graphics",
+        "props": {
+            "ttf_file": "/home/ttf/NotoSans-Regular.ttf"
+        }
+    }
+  ],
+  "pipe": [
+    [
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      2,
+      0
+    ],
+    [
+      2,
+      0,
+      3,
+      0
+    ],
+    [
+      3,
+      0,
+      4,
+      0
+    ],
+    [
+      4,
+      0,
+      5,
+      0
+    ]
+  ]
+}

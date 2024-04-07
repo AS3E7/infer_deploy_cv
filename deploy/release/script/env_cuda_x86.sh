@@ -1,0 +1,1 @@
+export LD_LIBRARY_PATH=/usr/local/ffmpeg_x86_cuda/lib:/usr/local/opencv_x86_cuda/lib:/usr/local/x86-common/boost_1.81_gcc7.5/lib:$LD_LIBRARY_PATH

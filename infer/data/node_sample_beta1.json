@@ -1,0 +1,129 @@
+{
+    "version": "v0",
+    "nodes": [
+      {
+        "id": 0,
+        "type": "Demuxer_v2",
+        "name": "Demuxer_v2_0",
+        "runner": "Decoder_v2_1",
+        "props": {
+          "stream_url": "file:///workspace/inference-engine/ee9fcd90535271ab30ddc45a07837de5.jpg"
+        }
+      },
+      {
+        "id": 1,
+        "type": "Decoder_v2",
+        "name": "Decoder_v2_1",
+        "runner": "Decoder_v2_1",
+        "props": {
+          "hw_type": 2
+        }
+      },
+      {
+        "id": 2,
+        "type": "AvToCv_v2",
+        "name": "AvToCv_v2_2",
+        "runner": "default"
+      },
+      {
+        "id": 3,
+        "type": "Detection_v2",
+        "name": "Detection_v2_3",
+        "runner": "Detection",
+        "props": {
+          "mod_iter_id": 0,
+          "mod_license": "",
+          "mod_name": "det1",
+          "conf_path": "/home/models/acaa86cedcd5385e3b2a35ad99a616cc.json",
+          "mod_path": "/home/models/acaa86cedcd5385e3b2a35ad99a616cc.gem",
+          "filter_labels": ["person"]
+        }
+      },
+      {
+        "id": 4,
+        "type": "ROI_v2",
+        "name": "ROI_v2_4",
+        "runner": "default",
+        "props": {
+          "regions": []
+        }
+      },
+      {
+        "id": 8,
+        "type": "Bridge_v2",
+        "name": "Bridge_v2_8",
+        "runner": "Brigde",
+        "props": {
+          "enable": true
+        }
+      },
+      {
+        "id": 9,
+        "type": "Graphics_v2",
+        "name": "Graphics_v2_9",
+        "runner": "Graphics",
+        "props": {
+          "ttf_file": "/home/ttf/NotoSans-Regular.ttf"
+        }
+      },
+      {
+        "id": 10,
+        "type": "VideoEncode_v2",
+        "name": "VideoEncode_v2_10",
+        "runner": "Brigde",
+        "props": {
+          "output_stream_url": "ee9fcd90535271ab30ddc45a07837de5.jpg"
+        }
+      }
+    ],
+    "pipe": [
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        2,
+        0
+      ],
+      [
+        2,
+        0,
+        3,
+        0
+      ],
+      [
+        3,
+        0,
+        4,
+        0
+      ],
+      [
+        4,
+        0,
+        8,
+        0
+      ],
+      [
+        8,
+        0,
+        9,
+        0
+      ],
+      [
+        9,
+        0,
+        10,
+        0
+      ]
+    ]
+  }

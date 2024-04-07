@@ -1,0 +1,35 @@
+{
+    "version": "v0",
+    "nodes": [
+      {
+        "id": 0,
+        "type": "TestFileInput",
+        "name": "TestFileInput",
+        "runner": "default",
+        "props": {
+          "input_dir": "/root/imgs/test.jpeg"
+        }
+      },
+      {
+        "id": 1,
+        "type": "CropImage",
+        "name": "CropImage",
+        "runner": "post thread",
+        "props": {
+            "save_path": "/root/imgs/crop_test.jpeg",
+            "x1": 50,
+            "y1": 50,
+            "x2": 250,
+            "y2": 250
+        }
+      }
+    ],
+    "pipe": [
+      [
+        0,
+        0,
+        1,
+        0
+      ]
+    ]
+  }

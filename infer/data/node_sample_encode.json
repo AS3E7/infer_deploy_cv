@@ -1,0 +1,135 @@
+{
+  "version": "v0",
+  "nodes": [
+    {
+      "id": 0,
+      "type": "Demuxer_v2",
+      "name": "Demuxer_v2",
+      "runner": "default",
+      "props": {
+        "stream_url": "rtsp://admin:gddi1234@192.168.1.231:554/h264/ch1/main/av_stream"
+      }
+    },
+    {
+      "id": 1,
+      "type": "Decoder_v2",
+      "name": "Decoder_v2",
+      "runner": "default",
+      "props": {
+        "hw_type": 2,
+        "disable_acc": 1
+      }
+    },
+    {
+      "id": 2,
+      "type": "AvToCv_v2",
+      "name": "AvToCv_v2",
+      "runner": "default"
+    },
+    {
+      "id": 3,
+      "type": "Detection_v2",
+      "name": "Detection_v2",
+      "runner": "default",
+      "props": {
+        "mod_name": "det_person",
+        "conf_path": "/workspace/ffmpeg-wrapper/models/person.json",
+        "mod_path": "/workspace/ffmpeg-wrapper/models/person.gem"
+      }
+    },
+    {
+      "id": 4,
+      "type": "Graphics_v2",
+      "name": "Graphics_v2",
+      "runner": "default",
+      "props": {
+        "ttf_file": "/workspace/ffmpeg-wrapper/resources/ttf/NotoSans-Regular.ttf"
+      }
+    },
+    {
+      "id": 5,
+      "type": "CvToAv_v2",
+      "name": "CvToAv_v2",
+      "runner": "Encoder"
+    },
+    {
+      "id": 7,
+      "type": "Encoder_v2",
+      "name": "Encoder_v2",
+      "runner": "Encoder",
+      "props": {
+        "width": 2560,
+        "height": 1440,
+        "framerate": 20,
+        "bitrate": 4000000,
+        "gop_size": 32,
+        "codec": "h264_bm"
+      }
+    },
+    {
+      "id": 8,
+      "type": "Remuxer_v2",
+      "name": "Remuxer_v2",
+      "runner": "Encoder",
+      "props": {
+        "stream_url": "rtsp://192.168.1.248:8554/live/report/av_stream"
+      }
+    }
+  ],
+  "pipe": [
+    [
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      2,
+      0
+    ],
+    [
+      2,
+      0,
+      3,
+      0
+    ],
+    [
+      3,
+      0,
+      4,
+      0
+    ],
+    [
+      4,
+      0,
+      5,
+      0
+    ],
+    [
+      5,
+      0,
+      7,
+      0
+    ],
+    [
+      7,
+      0,
+      8,
+      0
+    ],
+    [
+      7,
+      1,
+      8,
+      1
+    ]
+  ]
+}

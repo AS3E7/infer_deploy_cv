@@ -1,0 +1,205 @@
+{
+    "version": "v0.1.1",
+    "log_level": "info",
+    "log_save_path" : "/data/benchmark/result/",
+    "tasks":{                        
+        "target_device": ["cambricon_mlu220_aarch64"], 
+        "task_type": ["map"],        
+        "pipeline": [
+            ""
+        ]
+    },
+    "sdk": {                 
+        "sdk_path": "/data/gddeploy/install",
+        "sdk_cmd_dataset": "sample_runner_dataset",
+        "sdk_cmd_pic": "sample_runner_pic",
+        "sdk_cmd_video": "sample_runner_video",
+        "sdk_config_path": "",
+        "sdk_env": "LD_LIBRARY_PATH=$SDK_PATH/lib:$SDK_PATH/thirdparty/lib/:$SDK_PATH/thirdparty/lib64:${LD_LIBRARY_PATH}"
+    },
+    "models": [            
+        {
+            "model_path": "/volume1/gddi-data/lgy/models/yolo/helmet/gddi_model.cambricon",
+            "model_properties": "/volume1/gddi-data/lgy/models/yolo/helmet/gddi_model.properties",
+            "dataset": {
+                "anno_file": "/volume1/gddi-data/lgy/dataset/helmet/0/annotation/valid/anno.json",
+                "pic_path": "/volume1/gddi-data/lgy/dataset/helmet/0/images/valid/"
+            }
+        },
+        {
+            "model_path": "/volume1/gddi-data/lgy/models/yolox/pose/gddi_model.cambricon",
+            "model_properties": "/volume1/gddi-data/lgy/models/yolox/pose/gddi_model.properties",
+            "dataset": {
+                "anno_file": "/volume1/gddi-data/COCO/coco2017/annotations/person_only_keypoints_val2017.json",
+                "pic_path": "/volume1/gddi-data/lgy/dataset/jishui/0/images/valid/"
+            }
+        },
+        {
+            "model_path": "/volume1/gddi-data/lgy/models/seg/jishui/gddi_model.cambricon",
+            "model_properties": "/volume1/gddi-data/lgy/models/seg/jishui/gddi_model.properties",
+            "dataset": {
+                "anno_file": "/volume1/gddi-data/lgy/dataset/jishui/0/annotation/valid/anno.json",
+                "pic_path": "/volume1/gddi-data/lgy/dataset/jishui/0/images/valid/"
+            }
+        },
+        {
+            "model_path": "/volume1/gddi-data/lgy/models/image_retrieval/gddi_model.cambricon",
+            "model_properties": "/volume1/gddi-data/lgy/models/image_retrieval/gddi_model.properties",
+            "dataset": {
+                "anno_file": "/volume1/gddi-data/lgy/dataset/face_samples/face_complex.json",
+                "pic_path": "/volume1/gddi-data/lgy/dataset/face_samples/face_samples/"
+            }
+        },
+        {
+            "model_path": "/volume1/gddi-data/lgy/models/yolo/helmet/gddi_model.cambricon",
+            "model_properties": "/volume1/gddi-data/lgy/models/yolo/helmet/gddi_model.properties",
+            "dataset": {
+                "anno_file": "/volume1/gddi-data/lgy/dataset/car_ocr/rec.txt",
+                "pic_path": "/volume1/gddi-data/lgy/dataset/car_ocr/crop_imgs/"
+            }
+        },
+        {
+            "model_path": "/volume1/gddi-data/lgy/models/yolo/helmet/gddi_model.cambricon",
+            "model_properties": "/volume1/gddi-data/lgy/models/yolo/helmet/gddi_model.properties",
+            "dataset": {
+                "anno_file": "/volume1/gddi-data/lgy/dataset/helmet/0/annotation/valid/anno.json",
+                "pic_path": "/volume1/gddi-data/lgy/dataset/helmet/0/images/valid/"
+            }
+        }
+    ],
+    "dev_infos": {               
+        "cambricon_mlu220_aarch64": {
+            "product": "cambricon",
+            "chip": "mlu220",
+            "arch": "aarch64",
+            "communication": {
+                "type": "ssh",  
+                "ip": "10.11.0.202",
+                "username": "root",
+                "password": "gdd"
+            }, 
+            "model_suffix": ".cambricon",
+            "device_env": "",
+            "speed_pre_cmd": "mkdir -p /data/host /data/gddeploy /volume1/gddi-data && mount -t nfs4 -o soft 192.168.1.66:/volume1/ml-data /volume1/gddi-data && mount -t nfs 10.11.0.128:/root/work/cambricon /data/host && mount -t nfs 10.11.0.128:/root/work/gddeploy /data/gddeploy", 
+            "speed_cmd": "/data/host/samples_2xx/dev-env-ubuntu/test/cnrtexec/cnrtexec",
+            "speed_cmd_args": "0 4 10 0",
+            "docker_image": "",
+            "docker_contrainer": "",
+            "docker_contrainer_cmd": ""
+        },
+        "cambricon_mlu270_x86": {
+            "product": "cambricon",
+            "chip": "mlu270",
+            "arch": "x86",
+            "communication": {
+                "type": "ssh",  
+                "ip": "192.168.1.177",
+                "username": "root",
+                "password": "gdd"
+            }, 
+            "model_suffix": ".cambricon",
+            "device_env": "",
+            "speed_pre_cmd": "mkdir -p /data/host /data/gddeploy /volume1/gddi-data && mount -t nfs4 -o soft 192.168.1.66:/volume1/ml-data /volume1/gddi-data && mount -t nfs 10.11.0.128:/root/work/cambricon /data/host && mount -t nfs 10.11.0.128:/root/work/gddeploy /data/gddeploy", 
+            "speed_cmd": "/data/host/samples_2xx/dev-env-ubuntu/test/cnrtexec/cnrtexec_x86",
+            "speed_cmd_args": "0 4 10 0",
+            "docker_image": "",
+            "docker_contrainer": "",
+            "docker_contrainer_cmd": ""
+        },
+        "sophgo_bm1684_aarch64": {
+            "product": "sophgo",
+            "chip": "bm1684",
+            "arch": "aarch64",
+            "communication": {
+                "type": "ssh",  
+                "ip": "10.11.0.36",
+                "username": "root",
+                "password": "gdd"
+            }, 
+            "model_suffix": ".bmodel",
+            "device_env": "LD_LIBRARY_PATH=/system/lib/",
+            "speed_pre_cmd": "mkdir -p /data/host /data/gddeploy /volume1/gddi-data && mount -t nfs4 -o soft 192.168.1.66:/volume1/ml-data /volume1/gddi-data && mount -t nfs 10.11.0.128:/root/work/bmnn /data/host && mount -t nfs 10.11.0.128:/root/work/gddeploy /data/gddeploy", 
+            "speed_cmd": "bmrt_test",
+            "speed_cmd_args": "--bmodel",
+            "docker_image": "",
+            "docker_contrainer": "",
+            "docker_contrainer_cmd": "docker run -it --name gddeploy_ubuntu20_v0.1 --network=host --privileged=true -v /volume1/gddi-data/:/volume1/gddi-data/ -v /data/gddeploy/:/gddeploy -v /system/:/system arm64v8/ubuntu:20.04 /bin/bash"
+        },
+        "nvidia_jetsonnx_aarch64": {
+            "product": "nvidia",
+            "chip": "jetsonnx",
+            "arch": "aarch64",
+            "communication": {
+                "type": "ssh",  
+                "ip": "10.11.1.74",
+                "username": "gddi",
+                "password": "gddi1234"
+            }, 
+            "model_suffix": ".onnx",
+            "device_env": "LD_LIBRARY_PATH=/system/lib/",
+            "speed_pre_cmd": "mkdir -p /data/host /data/gddeploy /volume1/gddi-data && mount -t nfs4 -o soft 192.168.1.66:/volume1/ml-data /volume1/gddi-data && mount -t nfs 10.11.0.128:/root/work/bmnn /data/host && mount -t nfs 10.11.0.128:/root/work/gddeploy /data/gddeploy && insmod /volume1/gddi-data/lgy/ts/ReleaseDeliverables/TX5368A-Lib/TS-RT-LIB_2.0.0.9/TS-RT-LIB/examples/scripts/chip_driver.ko", 
+            "speed_cmd": "trtexec",
+            "speed_cmd_args": "--bmodel",
+            "docker_image": "",
+            "docker_contrainer": "",
+            "docker_contrainer_cmd": ""
+        },
+        "nvidia_t4_x86": {
+            "product": "nvidia",
+            "chip": "t4",
+            "arch": "x86",
+            "communication": {
+                "type": "ssh",  
+                "ip": "10.11.0.223",
+                "username": "gddi",
+                "password": "gddi1234"
+            }, 
+            "model_suffix": ".onnx",
+            "device_env": "LD_LIBRARY_PATH=/system/lib/",
+            "speed_pre_cmd": "mkdir -p /data/host /data/gddeploy /volume1/gddi-data && mount -t nfs4 -o soft 192.168.1.66:/volume1/ml-data /volume1/gddi-data && mount -t nfs 10.11.0.128:/root/work/bmnn /data/host && mount -t nfs 10.11.0.128:/root/work/gddeploy /data/gddeploy && insmod /volume1/gddi-data/lgy/ts/ReleaseDeliverables/TX5368A-Lib/TS-RT-LIB_2.0.0.9/TS-RT-LIB/examples/scripts/chip_driver.ko", 
+            "speed_cmd": "trtexec",
+            "speed_cmd_args": "--bmodel",
+            "docker_image": "",
+            "docker_contrainer": "",
+            "docker_contrainer_cmd": ""
+        },
+        "intel_i5-1145G7E_x86": {
+            "product": "intel",
+            "chip": "i5-1145G7E",
+            "arch": "x86",
+            "communication": {
+                "type": "ssh",  
+                "ip": "10.11.0.140",
+                "username": "root",
+                "password": "123456"
+            }, 
+            "model_suffix": ".openvino",
+            "device_env": "LD_LIBRARY_PATH=/system/lib/",
+            "speed_pre_cmd": "mkdir -p /data/host /data/gddeploy /volume1/gddi-data && mount -t nfs4 -o soft 192.168.1.66:/volume1/ml-data /volume1/gddi-data && mount -t nfs 10.11.0.128:/root/work/bmnn /data/host && mount -t nfs 10.11.0.128:/root/work/gddeploy /data/gddeploy && insmod /volume1/gddi-data/lgy/ts/ReleaseDeliverables/TX5368A-Lib/TS-RT-LIB_2.0.0.9/TS-RT-LIB/examples/scripts/chip_driver.ko", 
+            "speed_cmd": "bmrt_test",
+            "speed_cmd_args": "--bmodel",
+            "docker_image": "",
+            "docker_contrainer": "",
+            "docker_contrainer_cmd": ""
+        },
+        "tsingmicro_tx5368a_aarch64": {
+            "product": "tsingmicro",
+            "chip": "tx5368a",
+            "arch": "aarch64",
+            "communication": {
+                "type": "telnet",  
+                "ip": "10.11.0.233",
+                "username": "root",
+                "password": "gdd"
+            }, 
+            "model_suffix": ".tsm",
+            "device_env": "LD_LIBRARY_PATH=/system/lib/",
+            "speed_pre_cmd": "mkdir -p /data/host /data/gddeploy /volume1/gddi-data && mount -t nfs4 -o soft 192.168.1.66:/volume1/ml-data /volume1/gddi-data && mount -t nfs 10.11.0.128:/root/work/bmnn /data/host && mount -t nfs 10.11.0.128:/root/work/gddeploy /data/gddeploy && insmod /volume1/gddi-data/lgy/ts/ReleaseDeliverables/TX5368A-Lib/TS-RT-LIB_2.0.0.9/TS-RT-LIB/examples/scripts/chip_driver.ko", 
+            "speed_cmd": "bmrt_test",
+            "speed_cmd_args": "--bmodel",
+            "docker_image": "",
+            "docker_contrainer": "",
+            "docker_contrainer_cmd": ""
+        }
+    }
+}

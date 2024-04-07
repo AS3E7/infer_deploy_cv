@@ -1,0 +1,33 @@
+FROM arm64v8/ubuntu:20.04
+
+RUN apt update && \
+    apt install -y libssl-dev locales wget unzip && \
+    rm -rf /var/lib/apt/lists/*
+RUN sed -i 's/# en_US.UTF-8/en_US.UTF-8/g' /etc/locale.gen
+RUN sed -i 's/# zh_CN.GBK/zh_CN.GBK/g' /etc/locale.gen
+RUN locale-gen
+
+RUN cd /tmp && \
+    wget --content-disposition \
+        http://cacher.devops.io/api/cacher/files/58b7c5a881137459e2414a561a1c15c85d7fa785b423d98b5bd17a3afb3306d5 && \
+    unzip bmnnsdk2_bm1684_v2.7.0_20220810patched.zip && cd bmnnsdk2_bm1684_v2.7.0_20220810patched && \
+    tar -zxvf bmnnsdk2-bm1684_v2.7.0.tar.gz && \
+    mkdir -p /system/lib && \
+    cp -r bmnnsdk2-bm1684_v2.7.0/lib/ffmpeg/soc/* /system/lib && \
+    cp -r bmnnsdk2-bm1684_v2.7.0/lib/opencv/soc/* /system/lib && \
+    cp -r bmnnsdk2-bm1684_v2.7.0/lib/bmnn/soc/* /system/lib && \
+    cp -r bmnnsdk2-bm1684_v2.7.0/lib/decode/soc/* /system/lib && \
+    rm -rf /tmp/*
+
+COPY data/action/* /home/config/
+COPY data/jpeg-preview.json /home/templates/
+COPY data/config/modbus_cfg.json /home/config/
+COPY data/config/NotoSansCJK-Regular.ttc /home/config/
+COPY release/aarch64/bm1684/lib/ /usr/local/lib/
+COPY release/aarch64/bm1684/bin/ /usr/local/bin/
+
+ENV LD_LIBRARY_PATH=/system/lib:/usr/local/lib:$LD_LIBRARY_PATH
+
+WORKDIR /home
+
+ENTRYPOINT [ "node_srv" ]

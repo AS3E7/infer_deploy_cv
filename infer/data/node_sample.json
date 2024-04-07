@@ -1,0 +1,73 @@
+{
+  "version": "v0",
+  "nodes": [
+    {
+      "id": 0,
+      "type": "Demuxer_v1",
+      "name": "Demuxer_v1",
+      "runner": "default",
+      "props": {
+        "stream_url": "rtsp://admin:gddi1234@192.168.1.233:554/h264/ch1/main/av_stream"
+      }
+    },
+    {
+      "id": 1,
+      "type": "Decoder_v1",
+      "name": "Decoder_v1",
+      "runner": "decode thread",
+      "props": {
+        "prefer_hw": 2
+      }
+    },
+    {
+      "id": 2,
+      "type": "CvImShow_v1",
+      "name": "cv show",
+      "runner": "default"
+    },
+    {
+      "id": 3,
+      "type": "CvImShow_v1",
+      "name": "cv show222",
+      "runner": "default222"
+    }
+  ],
+  "pipe": [
+    [
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      2,
+      0
+    ],
+    [
+      1,
+      1,
+      2,
+      1
+    ],
+    [
+      1,
+      0,
+      3,
+      0
+    ],
+    [
+      1,
+      1,
+      3,
+      1
+    ]
+  ]
+}

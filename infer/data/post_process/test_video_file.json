@@ -1,0 +1,64 @@
+{
+    "version": "v0",
+    "nodes": [
+        {
+            "id": 0,
+            "type": "Demuxer_v2",
+            "name": "Demuxer_v2",
+            "runner": "default",
+            "props": {
+                "stream_url": "rtsp://admin:gddi1234@192.168.1.231:554/h264/ch1/main/av_stream"
+            }
+        },
+        {
+            "id": 1,
+            "type": "Decoder_v2",
+            "name": "Decoder_v2",
+            "runner": "decode thread",
+            "props": {
+                "prefer_hw": 2
+            }
+        },
+        {
+            "id": 2,
+            "type": "AvToCv_v2",
+            "name": "AvToCv_v2",
+            "runner": "default"
+        },
+        {
+            "id": 3,
+            "type": "Debug_v2",
+            "name": "Debug_v2",
+            "runner": "default",
+            "props": {
+                "save_path": "/root/data/ffmpeg-wrapper-data/debug"
+            }
+        }
+    ],
+    "pipe": [
+        [
+            0,
+            0,
+            1,
+            0
+        ],
+        [
+            0,
+            1,
+            1,
+            1
+        ],
+        [
+            1,
+            1,
+            2,
+            0
+        ],
+        [
+            2,
+            0,
+            3,
+            0
+        ]
+    ]
+}

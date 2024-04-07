@@ -1,0 +1,55 @@
+{
+  "version": "v0",
+  "nodes": [
+    {
+      "id": 0,
+      "type": "CvToAv_v2",
+      "name": "CvToAv_v2_0",
+      "runner": "default",
+      "props": {}
+    },
+    {
+      "id": 1,
+      "type": "Encoder_v2",
+      "name": "Encoder_v2_1",
+      "runner": "default",
+      "props": {
+        "bitrate": 4000000,
+        "codec": "$codec",
+        "framerate": 25,
+        "gop_size": 32,
+        "height": 1080,
+        "width": 1920
+      }
+    },
+    {
+      "id": 2,
+      "type": "Remuxer_v2",
+      "name": "Remuxer_v2_2",
+      "runner": "default",
+      "props": {
+        "stream_url": "$stream_url"
+      }
+    }
+  ],
+  "pipe": [
+    [
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      1,
+      0,
+      2,
+      0
+    ],
+    [
+      1,
+      1,
+      2,
+      1
+    ]
+  ]
+}

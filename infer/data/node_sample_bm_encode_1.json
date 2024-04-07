@@ -1,0 +1,131 @@
+{
+  "version": "v0",
+  "nodes": [
+    {
+      "id": 0,
+      "type": "Demuxer_v2",
+      "name": "Demuxer_v2_0",
+      "runner": "Decoder",
+      "props": {
+        "stream_url": "http://127.0.0.1:8080/data/rawrecord/record/live/268c0974072644f07d64599ce1bc55cd/2022-01-10/07-18-57.mp4?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySUQiOiJhZG1pbiIsImV4cCI6NDc5NTc1NjUyMn0.cWdsXfnojnK7T006SMCItuyKYpy-_jxn-_yhERW01tE"
+      }
+    },
+    {
+      "id": 1,
+      "type": "Decoder_v2",
+      "name": "Decoder_v2_1",
+      "runner": "Decoder",
+      "props": {
+        "hw_type": 2
+      }
+    },
+    {
+      "id": 2,
+      "type": "AvToCv_v2",
+      "name": "AvToCv_v2_2",
+      "runner": "Decoder"
+    },
+    {
+      "id": 3,
+      "type": "Detection_v2",
+      "name": "Detection_v2_3",
+      "runner": "Detection",
+      "props": {
+        "mod_name": "det",
+        "mod_path": "/home/models/person.gem",
+        "filter_labels": [
+          "person"
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "type": "Graphics_v2",
+      "name": "Graphics_v2_4",
+      "runner": "Graphics",
+      "props": {
+        "ttf_file": "/home/ttf/NotoSans-Regular.ttf"
+      }
+    },
+    {
+      "id": 5,
+      "type": "CvToAv_v2",
+      "name": "CvToAv_v2",
+      "runner": "Encoder"
+    },
+    {
+      "id": 6,
+      "type": "Encoder_v2",
+      "name": "Encoder_v2",
+      "runner": "Encoder",
+      "props": {
+        "codec": "h264_bm"
+      }
+    },
+    {
+      "id": 7,
+      "type": "Remuxer_v2",
+      "name": "Remuxer_v2",
+      "runner": "Encoder",
+      "props": {
+        "stream_url": "1642156826.mp4"
+      }
+    }
+  ],
+  "pipe": [
+    [
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      2,
+      0
+    ],
+    [
+      2,
+      0,
+      3,
+      0
+    ],
+    [
+      3,
+      0,
+      4,
+      0
+    ],
+    [
+      4,
+      0,
+      5,
+      0
+    ],
+    [
+      5,
+      0,
+      6,
+      0
+    ],
+    [
+      6,
+      0,
+      7,
+      0
+    ],
+    [
+      6,
+      1,
+      7,
+      1
+    ]
+  ]
+}

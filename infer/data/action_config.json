@@ -1,0 +1,54 @@
+[
+    {
+        "name": "跳绳",
+        "tiaosheng": {"0":{"weight":1.0,"orientation":"vertical"},"1":{"weight":1.0,"orientation":"vertical"},"2":{"weight":1.0,"orientation":"vertical"},"3":{"weight":1.0,"orientation":"vertical"},"4":{"weight":1.0,"orientation":"vertical"},"5":{"weight":1.0,"orientation":"vertical"},"6":{"weight":1.0,"orientation":"vertical"},"7":{"weight":1.0,"orientation":"vertical"},"8":{"weight":1.0,"orientation":"vertical"},"9":{"weight":1.0,"orientation":"vertical"},"10":{"weight":1.0,"orientation":"vertical"},"11":{"weight":1.0,"orientation":"vertical"},"12":{"weight":1.0,"orientation":"vertical"},"13":{"weight":1.0,"orientation":"vertical"},"14":{"weight":1.0,"orientation":"vertical"},"15":{"weight":1.0,"orientation":"vertical"},"16":{"weight":1.0,"orientation":"vertical"}}
+    },
+    {
+        "name": "开合跳",
+        "kaihetiao": {"0":{"weight":0.0,"orientation":"vertical"},"1":{"weight":0.0,"orientation":"vertical"},"2":{"weight":0.0,"orientation":"vertical"},"3":{"weight":0.0,"orientation":"vertical"},"4":{"weight":0.0,"orientation":"vertical"},"5":{"weight":0.0,"orientation":"vertical"},"6":{"weight":0.0,"orientation":"vertical"},"7":{"weight":1.0,"orientation":"vertical"},"8":{"weight":1.0,"orientation":"vertical"},"9":{"weight":1.0,"orientation":"vertical"},"10":{"weight":1.0,"orientation":"vertical"},"11":{"weight":0.0,"orientation":"vertical"},"12":{"weight":0.0,"orientation":"vertical"},"13":{"weight":1.0,"orientation":"horizontal"},"14":{"weight":1.0,"orientation":"horizontal"},"15":{"weight":1.0,"orientation":"horizontal"},"16":{"weight":1.0,"orientation":"horizontal"}}
+    },
+    {
+        "name": "后踢腿跑",
+        "houtituipao": {"0":{"weight":0.0,"orientation":"vertical"},"1":{"weight":0.0,"orientation":"vertical"},"2":{"weight":0.0,"orientation":"vertical"},"3":{"weight":0.0,"orientation":"vertical"},"4":{"weight":0.0,"orientation":"vertical"},"5":{"weight":1.0,"orientation":"vertical"},"6":{"weight":1.0,"orientation":"vertical"},"7":{"weight":1.0,"orientation":"vertical"},"8":{"weight":1.0,"orientation":"vertical"},"9":{"weight":1.0,"orientation":"vertical"},"10":{"weight":1.0,"orientation":"vertical"},"11":{"weight":1.0,"orientation":"vertical"},"12":{"weight":1.0,"orientation":"vertical"},"13":{"weight":1.0,"orientation":"vertical"},"14":{"weight":1.0,"orientation":"vertical"},"15":{"weight":1.0,"orientation":"vertical"},"16":{"weight":1.0,"orientation":"vertical"}}
+    },
+    {
+        "name": "同侧膝肘互撞",
+        "tongcexizhouhuzhuang": {"0":{"weight":0,"orientation":"vertical"},"1":{"weight":0,"orientation":"vertical"},"2":{"weight":0,"orientation":"vertical"},"3":{"weight":0,"orientation":"vertical"},"4":{"weight":0,"orientation":"vertical"},"5":{"weight":0,"orientation":"vertical"},"6":{"weight":0,"orientation":"vertical"},"7":{"weight":1.0,"orientation":"vertical"},"8":{"weight":1.0,"orientation":"vertical"},"9":{"weight":0,"orientation":"vertical"},"10":{"weight":0,"orientation":"vertical"},"11":{"weight":1.0,"orientation":"vertical"},"12":{"weight":1.0,"orientation":"vertical"},"13":{"weight":1.0,"orientation":"vertical"},"14":{"weight":1.0,"orientation":"vertical"},"15":{"weight":1.0,"orientation":"vertical"},"16":{"weight":1.0,"orientation":"vertical"}}
+    },
+    {
+        "name": "高抬腿",
+        "gaotaitui": {"0":{"weight":0.0,"orientation":"vertical"},"1":{"weight":0.0,"orientation":"vertical"},"2":{"weight":0.0,"orientation":"vertical"},"3":{"weight":0.0,"orientation":"vertical"},"4":{"weight":0.0,"orientation":"vertical"},"5":{"weight":0.0,"orientation":"horizontal"},"6":{"weight":0.0,"orientation":"horizontal"},"7":{"weight":0.0,"orientation":"score"},"8":{"weight":0.0,"orientation":"score"},"9":{"weight":0.0,"orientation":"horizontal"},"10":{"weight":0.0,"orientation":"horizontal"},"11":{"weight":0.0,"orientation":"vertical"},"12":{"weight":0.0,"orientation":"vertical"},"13":{"weight":1.0,"orientation":"vertical"},"14":{"weight":1.0,"orientation":"vertical"},"15":{"weight":1.0,"orientation":"vertical"},"16":{"weight":1.0,"orientation":"vertical"}}
+    },
+    {
+        "name": "波比跳",
+        "bobitiao": {"0":{"weight":1.0,"orientation":"vertical"},"1":{"weight":1.0,"orientation":"vertical"},"2":{"weight":1.0,"orientation":"vertical"},"3":{"weight":1.0,"orientation":"vertical"},"4":{"weight":1.0,"orientation":"vertical"},"5":{"weight":1.0,"orientation":"vertical"},"6":{"weight":1.0,"orientation":"vertical"},"7":{"weight":1.0,"orientation":"vertical"},"8":{"weight":1.0,"orientation":"vertical"},"9":{"weight":1.0,"orientation":"vertical"},"10":{"weight":1.0,"orientation":"vertical"},"11":{"weight":1.0,"orientation":"vertical"},"12":{"weight":1.0,"orientation":"vertical"},"13":{"weight":1.0,"orientation":"vertical"},"14":{"weight":1.0,"orientation":"vertical"},"15":{"weight":1.0,"orientation":"vertical"},"16":{"weight":1.0,"orientation":"vertical"}}
+    },
+    {
+        "name": "向前弓箭步",
+        "xiangqiangongjianbu": {"0":{"weight":1.0,"orientation":"vertical"},"1":{"weight":1.0,"orientation":"vertical"},"2":{"weight":1.0,"orientation":"vertical"},"3":{"weight":1.0,"orientation":"vertical"},"4":{"weight":1.0,"orientation":"vertical"},"5":{"weight":1.0,"orientation":"vertical"},"6":{"weight":1.0,"orientation":"vertical"},"7":{"weight":1.0,"orientation":"vertical"},"8":{"weight":1.0,"orientation":"vertical"},"9":{"weight":1.0,"orientation":"vertical"},"10":{"weight":1.0,"orientation":"vertical"},"11":{"weight":1.0,"orientation":"vertical"},"12":{"weight":1.0,"orientation":"vertical"},"13":{"weight":1.0,"orientation":"vertical"},"14":{"weight":1.0,"orientation":"vertical"},"15":{"weight":1.0,"orientation":"vertical"},"16":{"weight":1.0,"orientation":"vertical"}}
+    },
+    {
+        "name": "单腿异侧臂前伸",
+        "dantuiyicebiqianshen": {"0":{"weight":1.0,"orientation":"vertical"},"1":{"weight":1.0,"orientation":"vertical"},"2":{"weight":1.0,"orientation":"vertical"},"3":{"weight":1.0,"orientation":"vertical"},"4":{"weight":1.0,"orientation":"vertical"},"5":{"weight":1.0,"orientation":"vertical"},"6":{"weight":1.0,"orientation":"vertical"},"7":{"weight":1.0,"orientation":"vertical"},"8":{"weight":1.0,"orientation":"vertical"},"9":{"weight":1.0,"orientation":"vertical"},"10":{"weight":1.0,"orientation":"vertical"},"11":{"weight":1.0,"orientation":"vertical"},"12":{"weight":1.0,"orientation":"vertical"},"13":{"weight":1.0,"orientation":"horizontal"},"14":{"weight":1.0,"orientation":"horizontal"},"15":{"weight":1.0,"orientation":"horizontal"},"16":{"weight":1.0,"orientation":"horizontal"}}
+    },
+    {
+        "name": "单腿下蹲",
+        "dantuixiadun": {"0":{"weight":0.0,"orientation":"vertical"},"1":{"weight":0.0,"orientation":"vertical"},"2":{"weight":0.0,"orientation":"vertical"},"3":{"weight":0.0,"orientation":"vertical"},"4":{"weight":0.0,"orientation":"vertical"},"5":{"weight":1.0,"orientation":"vertical"},"6":{"weight":1.0,"orientation":"vertical"},"7":{"weight":0.0,"orientation":"vertical"},"8":{"weight":0.0,"orientation":"vertical"},"9":{"weight":0.0,"orientation":"vertical"},"10":{"weight":0.0,"orientation":"vertical"},"11":{"weight":1.0,"orientation":"horizontal"},"12":{"weight":1.0,"orientation":"horizontal"},"13":{"weight":1.0,"orientation":"horizontal"},"14":{"weight":1.0,"orientation":"horizontal"},"15":{"weight":1.0,"orientation":"horizontal"},"16":{"weight":1.0,"orientation":"horizontal"}}
+    },
+    {
+        "name": "原地蹲起",
+        "yuandidunqi": {"0":{"weight":1.0,"orientation":"vertical"},"1":{"weight":1.0,"orientation":"vertical"},"2":{"weight":1.0,"orientation":"vertical"},"3":{"weight":1.0,"orientation":"vertical"},"4":{"weight":1.0,"orientation":"vertical"},"5":{"weight":1.0,"orientation":"vertical"},"6":{"weight":1.0,"orientation":"vertical"},"7":{"weight":1.0,"orientation":"vertical"},"8":{"weight":1.0,"orientation":"vertical"},"9":{"weight":1.0,"orientation":"vertical"},"10":{"weight":1.0,"orientation":"vertical"},"11":{"weight":1.0,"orientation":"vertical"},"12":{"weight":1.0,"orientation":"vertical"},"13":{"weight":1.0,"orientation":"vertical"},"14":{"weight":1.0,"orientation":"vertical"},"15":{"weight":1.0,"orientation":"vertical"},"16":{"weight":1.0,"orientation":"vertical"}}
+    },
+    {
+        "name": "单腿连续顶膝",
+        "dantuilianxudingxi": {"0":{"weight":1.0,"orientation":"vertical"},"1":{"weight":1.0,"orientation":"vertical"},"2":{"weight":1.0,"orientation":"vertical"},"3":{"weight":1.0,"orientation":"vertical"},"4":{"weight":1.0,"orientation":"vertical"},"5":{"weight":1.0,"orientation":"vertical"},"6":{"weight":1.0,"orientation":"vertical"},"7":{"weight":1.0,"orientation":"vertical"},"8":{"weight":1.0,"orientation":"vertical"},"9":{"weight":1.0,"orientation":"vertical"},"10":{"weight":1.0,"orientation":"vertical"},"11":{"weight":1.0,"orientation":"vertical"},"12":{"weight":1.0,"orientation":"vertical"},"13":{"weight":1.0,"orientation":"vertical"},"14":{"weight":1.0,"orientation":"vertical"},"15":{"weight":1.0,"orientation":"vertical"},"16":{"weight":1.0,"orientation":"vertical"}}
+    },
+    {
+        "name": "原地前后冲拳",
+        "yuandiqianhouchongquan": {"0":{"weight":0.0,"orientation":"horizontal"},"1":{"weight":0.0,"orientation":"horizontal"},"2":{"weight":0.0,"orientation":"horizontal"},"3":{"weight":0.0,"orientation":"horizontal"},"4":{"weight":0.0,"orientation":"horizontal"},"5":{"weight":1.0,"orientation":"all"},"6":{"weight":1.0,"orientation":"all"},"7":{"weight":1.0,"orientation":"all"},"8":{"weight":1.0,"orientation":"all"},"9":{"weight":1.0,"orientation":"all"},"10":{"weight":1.0,"orientation":"all"},"11":{"weight":0.0,"orientation":"horizontal"},"12":{"weight":0.0,"orientation":"horizontal"},"13":{"weight":1.0,"orientation":"horizontal"},"14":{"weight":1.0,"orientation":"horizontal"},"15":{"weight":1.0,"orientation":"all"},"16":{"weight":1.0,"orientation":"all"}}
+    },
+    {
+        "name": "对侧膝肘相撞",
+        "duicexizhouxiangzhuang": {"0":{"weight":1.0,"orientation":"vertical"},"1":{"weight":1.0,"orientation":"vertical"},"2":{"weight":1.0,"orientation":"vertical"},"3":{"weight":1.0,"orientation":"vertical"},"4":{"weight":1.0,"orientation":"vertical"},"5":{"weight":1.0,"orientation":"vertical"},"6":{"weight":1.0,"orientation":"vertical"},"7":{"weight":1.0,"orientation":"vertical"},"8":{"weight":1.0,"orientation":"vertical"},"9":{"weight":1.0,"orientation":"vertical"},"10":{"weight":1.0,"orientation":"vertical"},"11":{"weight":1.0,"orientation":"vertical"},"12":{"weight":1.0,"orientation":"vertical"},"13":{"weight":1.0,"orientation":"vertical"},"14":{"weight":1.0,"orientation":"vertical"},"15":{"weight":1.0,"orientation":"vertical"},"16":{"weight":1.0,"orientation":"vertical"}}
+    }
+]

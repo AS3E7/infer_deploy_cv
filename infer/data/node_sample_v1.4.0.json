@@ -1,0 +1,358 @@
+[
+    {
+        "version": "v0",
+        "nodes": [
+            {
+                "id": 0,
+                "type": "Demuxer_v2",
+                "name": "Demuxer_v2_0",
+                "runner": "Decoder_v2_1",
+                "props": {
+                    "stream_url": "/workspace/inference-engine/build/programs/06-04-02.mp4"
+                }
+            },
+            {
+                "id": 1,
+                "type": "Decoder_v2",
+                "name": "Decoder_v2_1",
+                "runner": "Decoder_v2_1",
+                "props": {
+                    "hw_type": 2
+                }
+            },
+            {
+                "id": 2,
+                "type": "AvToCv_v2",
+                "name": "AvToCv_v2_2",
+                "runner": "default"
+            },
+            {
+                "id": 3,
+                "type": "Detection_v2",
+                "name": "Detection_v2_3",
+                "runner": "Detection_1",
+                "props": {
+                    "mod_iter_id": "10000000001",
+                    "mod_license": "",
+                    "mod_name": "det1",
+                    "mod_path": "/home/models/cab69bc4aac410adab38617c8d1a482e.gem",
+                    "mod_labels": {
+                        "person": {
+                            "label": "person",
+                            "color": [
+                                0,
+                                255,
+                                0
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "id": 4,
+                "type": "RoiFilter_v2",
+                "name": "RoiFilter_v2_4",
+                "runner": "default",
+                "props": {
+                    "regions": []
+                }
+            },
+            {
+                "id": 8,
+                "type": "BoxFilter_v2",
+                "name": "BoxFilter_v2_8",
+                "runner": "default",
+                "props": {
+                    "min_width": 0,
+                    "max_width": 2560,
+                    "min_height": 0,
+                    "max_height": 1440,
+                    "min_area": 0,
+                    "max_area": 3686400,
+                    "box_thres": 1.0,
+                    "box_labels": [
+                        "not_face_mask"
+                    ]
+                }
+            },
+            {
+                "id": 9,
+                "type": "Graphics_v2",
+                "name": "Graphics_v2_9",
+                "runner": "Graphics",
+                "props": {
+                    "ttf_file": "/home/ttf/NotoSans-Regular.ttf"
+                }
+            },
+            {
+                "id": 10,
+                "type": "Report_v2",
+                "name": "Report_v2_10",
+                "runner": "default",
+                "props": {
+                    "report_url": "http://192.168.1.115:9080/api/inflet/v1/events"
+                }
+            }
+        ],
+        "pipe": [
+            [
+                0,
+                0,
+                1,
+                0
+            ],
+            [
+                0,
+                1,
+                1,
+                1
+            ],
+            [
+                1,
+                1,
+                2,
+                0
+            ],
+            [
+                2,
+                0,
+                3,
+                0
+            ],
+            [
+                3,
+                0,
+                4,
+                0
+            ],
+            [
+                4,
+                0,
+                8,
+                0
+            ],
+            [
+                8,
+                0,
+                9,
+                0
+            ],
+            [
+                9,
+                0,
+                10,
+                0
+            ]
+        ]
+    },
+    {
+        "version": "v0",
+        "nodes": [
+            {
+                "id": 0,
+                "type": "Demuxer_v2",
+                "name": "Demuxer_v2_0",
+                "runner": "Decoder_v2_1",
+                "props": {
+                    "stream_url": "/workspace/inference-engine/build/programs/06-04-02.mp4"
+                }
+            },
+            {
+                "id": 1,
+                "type": "Decoder_v2",
+                "name": "Decoder_v2_1",
+                "runner": "Decoder_v2_1",
+                "props": {
+                    "hw_type": 2
+                }
+            },
+            {
+                "id": 2,
+                "type": "AvToCv_v2",
+                "name": "AvToCv_v2_2",
+                "runner": "default"
+            },
+            {
+                "id": 3,
+                "type": "Detection_v2",
+                "name": "Detection_v2_3",
+                "runner": "Detection_1",
+                "props": {
+                    "mod_iter_id": "10000000001",
+                    "mod_license": "",
+                    "mod_name": "det1",
+                    "mod_path": "/home/models/cab69bc4aac410adab38617c8d1a482e.gem",
+                    "mod_labels": {
+                        "person": {
+                            "label": "person",
+                            "color": [
+                                0,
+                                255,
+                                0
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "id": 4,
+                "type": "RoiFilter_v2",
+                "name": "RoiFilter_v2_4",
+                "runner": "default",
+                "props": {
+                    "regions": []
+                }
+            },
+            {
+                "id": 5,
+                "type": "Tracking_v2",
+                "name": "Tracking_v2_5",
+                "runner": "default"
+            },
+            {
+                "id": 6,
+                "type": "CropImage_v2",
+                "name": "CropImage_v2_6",
+                "runner": "default",
+                "props": {
+                    "expansion_factor": 1
+                }
+            },
+            {
+                "id": 7,
+                "type": "Detection_v2",
+                "name": "Detection_v2_7",
+                "runner": "Detection_2",
+                "props": {
+                    "mod_iter_id": "10000000002",
+                    "mod_license": "",
+                    "mod_name": "det2",
+                    "mod_path": "/home/models/6c2830e312a2a462ba23e2ed6e84dbbb.gem",
+                    "mod_labels": {
+                        "face": {
+                            "label": "not_face_mask",
+                            "color": [
+                                0,
+                                0,
+                                255
+                            ]
+                        },
+                        "face_mask": {
+                            "label": "face_mask",
+                            "color": [
+                                0,
+                                255,
+                                0
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "id": 8,
+                "type": "BoxFilter_v2",
+                "name": "BoxFilter_v2_8",
+                "runner": "default",
+                "props": {
+                    "min_width": 0,
+                    "max_width": 2560,
+                    "min_height": 0,
+                    "max_height": 1440,
+                    "min_area": 0,
+                    "max_area": 3686400,
+                    "box_prob": 1.0,
+                    "box_labels": [
+                        "not_face_mask"
+                    ]
+                }
+            },
+            {
+                "id": 9,
+                "type": "Graphics_v2",
+                "name": "Graphics_v2_9",
+                "runner": "Graphics",
+                "props": {
+                    "ttf_file": "/home/ttf/NotoSans-Regular.ttf"
+                }
+            },
+            {
+                "id": 10,
+                "type": "Report_v2",
+                "name": "Report_v2_10",
+                "runner": "default",
+                "props": {
+                    "report_url": "http://192.168.1.115:9080/api/inflet/v1/events",
+                    "time_interval": 0
+                }
+            }
+        ],
+        "pipe": [
+            [
+                0,
+                0,
+                1,
+                0
+            ],
+            [
+                0,
+                1,
+                1,
+                1
+            ],
+            [
+                1,
+                1,
+                2,
+                0
+            ],
+            [
+                2,
+                0,
+                3,
+                0
+            ],
+            [
+                3,
+                0,
+                4,
+                0
+            ],
+            [
+                4,
+                0,
+                5,
+                0
+            ],
+            [
+                5,
+                0,
+                6,
+                0
+            ],
+            [
+                6,
+                0,
+                7,
+                0
+            ],
+            [
+                7,
+                0,
+                8,
+                0
+            ],
+            [
+                8,
+                0,
+                9,
+                0
+            ],
+            [
+                9,
+                0,
+                10,
+                0
+            ]
+        ]
+    }
+]

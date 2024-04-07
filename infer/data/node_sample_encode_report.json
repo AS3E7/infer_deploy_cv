@@ -1,0 +1,163 @@
+{
+    "version": "v0",
+    "nodes": [
+        {
+            "id": 0,
+            "type": "Demuxer_v2",
+            "name": "Demuxer_v2_0",
+            "runner": "default",
+            "props": {
+                "stream_url": "rtsp://admin:gddi1234@192.168.1.231:554/h264/ch1/main/av_stream"
+            }
+        },
+        {
+            "id": 1,
+            "type": "Decoder_v2",
+            "name": "Decoder_v2_1",
+            "runner": "default",
+            "props": {
+                "hw_type": 2
+            }
+        },
+        {
+            "id": 2,
+            "type": "AvToCv_v2",
+            "name": "AvToCv_v2_2",
+            "runner": "default"
+        },
+        {
+            "id": 3,
+            "type": "Detection_v2",
+            "name": "Detection_v2_3",
+            "runner": "default",
+            "props": {
+                "mod_name": "det_person",
+                "conf_path": "/workspace/ffmpeg-wrapper/models/person.json",
+                "mod_path": "/workspace/ffmpeg-wrapper/models/person.gem"
+            }
+        },
+        {
+            "id": 5,
+            "type": "Graphics_v2",
+            "name": "Graphics_v2_5",
+            "runner": "default",
+            "props": {
+                "ttf_file": "/workspace/ffmpeg-wrapper/resources/ttf/NotoSans-Regular.ttf"
+            }
+        },
+        {
+            "id": 7,
+            "type": "Encoder_v2",
+            "name": "Encoder_v2_7",
+            "runner": "default",
+            "props": {
+                "bitrate": 4000000,
+                "codec": "h264_nvenc",
+                "framerate": 20,
+                "gop_size": 32,
+                "height": 1440,
+                "width": 2560
+            }
+        },
+        {
+            "id": 9,
+            "type": "CvToAv_v2",
+            "name": "CvToAv_v2_9",
+            "runner": "default",
+            "props": {}
+        },
+        {
+            "id": 11,
+            "type": "Remuxer_v2",
+            "name": "Remuxer_v2_11",
+            "runner": "default",
+            "props": {
+                "stream_url": "rtsp://192.168.1.156:8554/live/report/av_stream-test"
+            }
+        },
+        {
+            "id": 12,
+            "type": "Tracking_v2",
+            "name": "Tracking_v2_12",
+            "runner": "default",
+            "props": {}
+        },
+        {
+            "id": 13,
+            "type": "Report_v2",
+            "name": "Report_v2_13",
+            "runner": "default",
+            "props": {
+                "report_url": "http://192.168.1.115:9080/api/inflet/v1/events"
+            }
+        }
+    ],
+    "pipe": [
+        [
+            0,
+            0,
+            1,
+            0
+        ],
+        [
+            0,
+            1,
+            1,
+            1
+        ],
+        [
+            1,
+            1,
+            2,
+            0
+        ],
+        [
+            2,
+            0,
+            3,
+            0
+        ],
+        [
+            5,
+            0,
+            9,
+            0
+        ],
+        [
+            9,
+            0,
+            7,
+            0
+        ],
+        [
+            7,
+            0,
+            11,
+            0
+        ],
+        [
+            7,
+            1,
+            11,
+            1
+        ],
+        [
+            3,
+            0,
+            5,
+            0
+        ],
+        [
+            5,
+            0,
+            12,
+            0
+        ],
+        [
+            12,
+            0,
+            13,
+            0
+        ]
+    ]
+}

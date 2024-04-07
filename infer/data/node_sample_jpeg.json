@@ -1,0 +1,97 @@
+{
+  "version": "v0",
+  "nodes": [
+    {
+      "id": 0,
+      "type": "Demuxer_v2",
+      "name": "Demuxer_v2",
+      "runner": "default",
+      "props": {
+        "stream_url": "rtsp://admin:gddi1234@192.168.1.233:554/h264/ch1/main/av_stream"
+      }
+    },
+    {
+      "id": 1,
+      "type": "Decoder_v2",
+      "name": "Decoder_v2",
+      "runner": "default",
+      "props": {
+        "hw_type": 2,
+        "disable_acc": 1
+      }
+    },
+    {
+      "id": 2,
+      "type": "AvToCv_v2",
+      "name": "AvToCv_v2",
+      "runner": "default"
+    },
+    {
+      "id": 3,
+      "type": "BmDetection_v2",
+      "name": "BmDetection_v2",
+      "runner": "default",
+      "props": {
+        "mod_name": "det_person",
+        "uuid": "45aa4c87-46ac-44b2-b731-2207a68301a6",
+        "mod_path": "/workspace/ffmpeg-wrapper/models/80477f7209468808a329f3330324e07a.gdd"
+      }
+    },
+    {
+      "id": 4,
+      "type": "Graphics_v2",
+      "name": "Graphics_v2",
+      "runner": "default",
+      "props": {
+        "ttf_file": "/workspace/ffmpeg-wrapper/resources/ttf/NotoSans-Regular.ttf"
+      }
+    },
+    {
+      "id": 5,
+      "type": "CvMatPusher_v2",
+      "name": "CvMatPusher_v2",
+      "runner": "default",
+      "props": {
+        "address": "tcp://*:9000"
+      }
+    }
+  ],
+  "pipe": [
+    [
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      2,
+      0
+    ],
+    [
+      2,
+      0,
+      3,
+      0
+    ],
+    [
+      3,
+      0,
+      4,
+      0
+    ],
+    [
+      4,
+      0,
+      5,
+      0
+    ]
+  ]
+}

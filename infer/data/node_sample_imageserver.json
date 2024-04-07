@@ -1,0 +1,65 @@
+{
+    "version": "v0",
+    "nodes": [
+        {
+            "id": 18,
+            "type": "ImageServer_v2",
+            "name": "ImageServer",
+            "runner": "default",
+            "props": {}
+        },
+        {
+            "id": 19,
+            "type": "Detection_v2",
+            "name": "Detection",
+            "runner": "default",
+            "props": {
+                "mod_labels": ["face", "face_mask"],
+                "mod_iter_id": "",
+                "mod_name": "",
+                "mod_path": "/home/models/6c2830e312a2a462ba23e2ed6e84dbbb.gem",
+                "mod_thresh": 0
+            }
+        },
+        {
+            "id": 20,
+            "type": "Graphics_v2",
+            "name": "Graphics",
+            "runner": "default",
+            "props": {
+                "ttf_file": "/home/ttf/NotoSans-Regular.ttf"
+            }
+        },
+        {
+            "id": 21,
+            "type": "Report_v2",
+            "name": "Report",
+            "runner": "default",
+            "props": {
+                "report_labels": ["face_mask"],
+                "report_url": "http://10.11.0.213:9080/api/inflet/v1/events",
+                "save_raw": false
+            }
+        }
+    ],
+    "pipe": [
+        [
+            18,
+            0,
+            19,
+            0
+        ],
+        [
+            19,
+            0,
+            20,
+            0
+        ],
+        [
+            20,
+            0,
+            21,
+            0
+        ]
+    ]
+}

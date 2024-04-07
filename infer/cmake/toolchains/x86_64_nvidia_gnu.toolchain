@@ -1,0 +1,4 @@
+set(TARGET_CHIP nvidia)
+
+list(APPEND CMAKE_FIND_ROOT_PATH /usr/local/x86_64-nvidia-gnu)
+set(ENV{PKG_CONFIG_PATH} /usr/local/x86_64-nvidia-gnu/lib/pkgconfig:$ENV{PKG_CONFIG_PATH})

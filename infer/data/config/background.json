@@ -1,0 +1,46 @@
+{
+    "imgfile": "background.png",
+    "constant": [],
+    "variable": [
+        {
+            "text": "$person_0",
+            "coordinate": [
+                1712,
+                270
+            ],
+            "font_size": 14
+        },
+        {
+            "text": "$car_0",
+            "coordinate": [
+                1712,
+                310
+            ],
+            "font_size": 14
+        },
+        {
+            "text": "$cyclist_0",
+            "coordinate": [
+                1712,
+                350
+            ],
+            "font_size": 14
+        },
+        {
+            "text": "$datetime",
+            "coordinate": [
+                1610,
+                166
+            ],
+            "font_size": 14
+        },
+        {
+            "text": "$total_0",
+            "coordinate": [
+                1692,
+                205
+            ],
+            "font_size": 16
+        }
+    ]
+}

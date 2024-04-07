@@ -1,0 +1,17 @@
+[requires]
+boost/1.81.0
+spdlog/1.8.5
+
+[generators]
+cmake
+cmake_find_package
+
+[options]
+boost:with_stacktrace_backtrace=False
+boost:without_stacktrace=True
+boost:without_locale = True
+boost:without_log = True
+boost:zlib=False
+
+[tool_requires]
+ninja/1.11.0

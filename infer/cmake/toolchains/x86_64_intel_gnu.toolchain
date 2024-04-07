@@ -1,0 +1,5 @@
+set(TARGET_CHIP intel)
+
+set(ENV{PKG_CONFIG_PATH} /usr/local/x86_64-intel-gnu/lib/pkgconfig:$ENV{PKG_CONFIG_PATH})
+set(OpenCV_DIR /opt/intel/openvino_2022/extras/opencv/cmake)
+set(InferenceEngine_DIR /opt/intel/openvino_2022/runtime/cmake)

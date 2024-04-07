@@ -1,0 +1,4 @@
+set(TARGET_CHIP mlu270)
+
+set(CMAKE_FIND_ROOT_PATH /usr/local/x86_64-mlu270-gnu)
+set(ENV{PKG_CONFIG_PATH} /usr/local/x86_64-mlu270-gnu/lib/pkgconfig:$ENV{PKG_CONFIG_PATH})

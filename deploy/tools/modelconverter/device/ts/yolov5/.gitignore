@@ -1,0 +1,22 @@
+# Byte-compiled
+__pycache__
+
+
+# Experiments
+runs/*
+
+# Training scripts
+
+
+# Pretrained weights
+weights/*
+
+# Tmp json
+*.json
+
+# Datasets
+datasets/*
+
+debug*
+
+temp/*

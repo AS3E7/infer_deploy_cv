@@ -1,0 +1,201 @@
+{
+    "version": "v0",
+    "nodes": [
+        {
+            "id": 0,
+            "type": "Demuxer_v2",
+            "name": "Demuxer_v2_0",
+            "runner": "default",
+            "props": {
+                "stream_url": "rtsp://admin:gddi1234@192.168.1.233:554/h264/ch1/main/av_stream"
+            }
+        },
+        {
+            "id": 1,
+            "type": "Decoder_v2",
+            "name": "Decoder_v2_1",
+            "runner": "default",
+            "props": {
+                "hw_type": 2,
+                "disable_acc": 1
+            }
+        },
+        {
+            "id": 2,
+            "type": "AvToCv_v2",
+            "name": "AvToCv_v2_2",
+            "runner": "default"
+        },
+        {
+            "id": 3,
+            "type": "Detection_v2",
+            "name": "Detection_v2_3",
+            "runner": "default",
+            "props": {
+                "mod_name": "det_person",
+                "conf_path": "/workspace/ffmpeg-wrapper/models/person.json",
+                "mod_path": "/workspace/ffmpeg-wrapper/models/person.gem"
+            }
+        },
+        {
+            "id": 5,
+            "type": "CvToAv_v2",
+            "name": "CvToAv_v2_5",
+            "runner": "default"
+        },
+        {
+            "id": 7,
+            "type": "Encoder_v2",
+            "name": "Encoder_v2_7",
+            "runner": "default",
+            "props": {
+                "width": 2560,
+                "height": 1440,
+                "framerate": 20,
+                "bitrate": 4000000,
+                "gop_size": 32,
+                "codec": "h264_nvenc"
+            }
+        },
+        {
+            "id": 8,
+            "type": "Remuxer_v2",
+            "name": "Remuxer_v2_8",
+            "runner": "default",
+            "props": {
+                "stream_url": "rtsp://192.168.1.156:8554/live/report/av_stream-encode"
+            }
+        },
+        {
+            "id": 15,
+            "type": "Tracking_v2",
+            "name": "Tracking_v2_15",
+            "runner": "default",
+            "props": {}
+        },
+        {
+            "id": 16,
+            "type": "Report_v2",
+            "name": "Report_v2_16",
+            "runner": "default",
+            "props": {
+                "report_url": "http://192.168.1.115:9080/api/inflet/v1/events"
+            }
+        },
+        {
+            "id": 17,
+            "type": "Detection_v2",
+            "name": "Detection_v2_17",
+            "runner": "default",
+            "props": {
+                "conf_path": "/workspace/ffmpeg-wrapper/models/mask.json",
+                "mod_name": "det_mask",
+                "mod_path": "/workspace/ffmpeg-wrapper/models/mask.gem"
+            }
+        },
+        {
+            "id": 18,
+            "type": "Merge_v2",
+            "name": "Merge_v2_18",
+            "runner": "default",
+            "props": {
+                "input_node": 2
+            }
+        },
+        {
+            "id": 19,
+            "type": "Graphics_v2",
+            "name": "Graphics_v2_19",
+            "runner": "default",
+            "props": {
+                "ttf_file": "/workspace/ffmpeg-wrapper/resources/ttf/NotoSans-Regular.ttf"
+            }
+        }
+    ],
+    "pipe": [
+        [
+            0,
+            0,
+            1,
+            0
+        ],
+        [
+            0,
+            1,
+            1,
+            1
+        ],
+        [
+            1,
+            1,
+            2,
+            0
+        ],
+        [
+            2,
+            0,
+            3,
+            0
+        ],
+        [
+            5,
+            0,
+            7,
+            0
+        ],
+        [
+            7,
+            0,
+            8,
+            0
+        ],
+        [
+            7,
+            1,
+            8,
+            1
+        ],
+        [
+            15,
+            0,
+            16,
+            0
+        ],
+        [
+            2,
+            0,
+            17,
+            0
+        ],
+        [
+            3,
+            0,
+            18,
+            0
+        ],
+        [
+            17,
+            0,
+            18,
+            0
+        ],
+        [
+            18,
+            0,
+            19,
+            0
+        ],
+        [
+            19,
+            0,
+            5,
+            0
+        ],
+        [
+            19,
+            0,
+            15,
+            0
+        ]
+    ]
+}

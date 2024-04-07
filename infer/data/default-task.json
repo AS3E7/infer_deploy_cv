@@ -1,0 +1,92 @@
+{
+    "nodes": [
+        {
+            "id": 0,
+            "name": "ImageServer_v2_0",
+            "props": {
+                "srv_port": 45223
+            },
+            "runner": "server",
+            "type": "ImageServer_v2"
+        },
+        {
+            "id": 1,
+            "name": "Inference_v2_1",
+            "props": {
+                "accelerate": "GPU",
+                "best_threshold": 0.3,
+                "labels": [
+                    "fire",
+                    "other_fire",
+                    "other_smoke",
+                    "smoke"
+                ],
+                "mod_created_at": "2023-03-30T07:41:48.000Z",
+                "mod_hash": "70c14937c47c06bacb5c91da1c9162a6",
+                "mod_id": "465280736055369728",
+                "mod_iter_id": "465280736055369729",
+                "mod_labels": {
+                    "fire": {
+                        "checked": true,
+                        "color": [
+                            241,
+                            0,
+                            0
+                        ],
+                        "label": "fire"
+                    },
+                    "other_fire": {
+                        "checked": false,
+                        "color": [
+                            255,
+                            255,
+                            0
+                        ],
+                        "label": "other_fire"
+                    },
+                    "other_smoke": {
+                        "checked": false,
+                        "color": [
+                            128,
+                            31,
+                            63
+                        ],
+                        "label": "other_smoke"
+                    },
+                    "smoke": {
+                        "checked": true,
+                        "color": [
+                            255,
+                            0,
+                            0
+                        ],
+                        "label": "smoke"
+                    }
+                },
+                "mod_license": "eyJ0eXBlIjoiZGV2aWNlIiwia2V5cyI6eyI3MGU2Nzc5Mi00NDAzLTdiY2MtNDNiMS02MjA0MGJkMzEwMmMiOiIrSnlKOFZiUXJDUk9GYXRVMHZRRnZSYjhBNXJyb1c0ejNRak5rb2VtTFVoYnl4Y0kwbE9TRkRsY3AvTWJmTXNOemhXMmhKZDllZmQvU1l3SC92dVlkZz09In0sImFkZGl0aW9uYWwiOiJjMDU1NDBhYy1lY2E4LTQwMjUtYTc3OC0yZGU4ZjZmMzVjM2UifQ==",
+                "mod_name": "03-30/火焰烟雾检测",
+                "mod_path": "/home/models/100002806_0.gem",
+                "mod_result_id": "3060",
+                "mod_version": "03-30/火焰烟雾检测",
+                "mod_version_id": 1
+            },
+            "runner": "inference",
+            "type": "Inference_v2"
+        }
+    ],
+    "pipe": [
+        [
+            0,
+            0,
+            1,
+            0
+        ],
+        [
+            1,
+            0,
+            0,
+            0
+        ]
+    ],
+    "version": "v1"
+}

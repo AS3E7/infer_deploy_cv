@@ -1,0 +1,31 @@
+{
+    "version": "v0",
+    "nodes": [
+      {
+        "id": 0,
+        "type": "Hello",
+        "name": "Hello",
+        "runner": "default",
+        "props": {
+          "stream_url": "rtsp://admin:gddi1234@192.168.1.233:554/h264/ch1/main/av_stream"
+        }
+      },
+      {
+        "id": 1,
+        "type": "World",
+        "name": "World",
+        "runner": "defaultb",
+        "props": {
+          "prefer_hw": 2
+        }
+      }
+    ],
+    "pipe": [
+      [
+        0,
+        0,
+        1,
+        0
+      ]
+    ]
+  }

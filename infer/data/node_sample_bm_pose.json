@@ -1,0 +1,132 @@
+{
+  "version": "v0",
+  "nodes": [
+    {
+      "id": 0,
+      "type": "Demuxer_v2",
+      "name": "Demuxer_v2_0",
+      "runner": "Decoder_v2_1",
+      "props": {
+        "stream_url": ""
+      }
+    },
+    {
+      "id": 1,
+      "type": "Decoder_v2",
+      "name": "Decoder_v2_1",
+      "runner": "Decoder_v2_1",
+      "props": {
+        "hw_type": 2
+      }
+    },
+    {
+      "id": 2,
+      "type": "AvToCv_v2",
+      "name": "AvToCv_v2_2",
+      "runner": "default"
+    },
+    {
+      "id": 3,
+      "type": "Pose_v2",
+      "name": "Pose_v2_3",
+      "runner": "Pose",
+      "props": {
+        "mod_iter_id": 0,
+        "mod_license": "",
+        "mod_name": "det1",
+        "conf_path": "",
+        "det_mod_path": "/home/models/cab69bc4aac410adab38617c8d1a482e.gem",
+        "pose_mod_path": "/home/models/c7c2a26ed2fca84a2d4833e71375e3ec.gem",
+        "filter_labels": []
+      }
+    },
+    {
+      "id": 4,
+      "type": "Detection_v2",
+      "name": "Detection_v2_4",
+      "runner": "Detection",
+      "props": {
+        "mod_iter_id": 0,
+        "mod_license": "",
+        "mod_name": "det1",
+        "conf_path": "",
+        "mod_path": "",
+        "filter_labels": []
+      }
+    },
+    {
+      "id": 5,
+      "type": "Tracking_v2",
+      "name": "Tracking_v2_5",
+      "runner": "default"
+    },
+    {
+      "id": 6,
+      "type": "Graphics_v2",
+      "name": "Graphics_v2_6",
+      "runner": "Graphics",
+      "props": {
+        "ttf_file": "/home/ttf/NotoSans-Regular.ttf"
+      }
+    },
+    {
+      "id": 7,
+      "type": "Report_v2",
+      "name": "Report_v2_7",
+      "runner": "default",
+      "props": {
+        "report_url": "http://192.168.1.115:9080/api/inflet/v1/events"
+      }
+    }
+  ],
+  "pipe": [
+    [
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      2,
+      0
+    ],
+    [
+      2,
+      0,
+      3,
+      0
+    ],
+    [
+      2,
+      0,
+      4,
+      0
+    ],
+    [
+      3,
+      0,
+      5,
+      0
+    ],
+    [
+      5,
+      0,
+      6,
+      0
+    ],
+    [
+      6,
+      0,
+      7,
+      0
+    ]
+  ]
+}

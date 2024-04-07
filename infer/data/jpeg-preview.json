@@ -1,0 +1,16 @@
+{
+  "version": "v0",
+  "nodes": [
+    {
+      "id": 1,
+      "type": "JpegPreviewer_v2",
+      "name": "JpegPreviewer_v2",
+      "runner": "previewer",
+      "props": {
+        "quality": 85,
+        "scale": "$scale",
+        "node_name": "$node_name"
+      }
+    }
+  ]
+}

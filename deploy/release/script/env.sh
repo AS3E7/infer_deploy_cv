@@ -1,0 +1,1 @@
+export LD_LIBRARY_PATH=/system/lib/:$PWD/lib/:$PWD/thirdparty/lib/:$PWD/thirdparty/aarch64-common/boost_1.81_gcc7.5/lib:$LD_LIBRARY_PATH
